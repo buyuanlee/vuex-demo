@@ -2,6 +2,7 @@
   <div>
     <span>我是子组件</span>------{{msg}}
     <button @click="sendMsgToFather">传递数据至父组件</button>
+    <button @click="pde">我是子组件改变状态</button>
     <br>
     我是来自全局的{{getNum}}
   </div>
@@ -24,6 +25,9 @@
     methods: {
       sendMsgToFather: function () {
         this.$emit('handle', this.toFartherMsg)
+      },
+      pde () {
+        this.$store.commit('decrease')
       }
     },
     computed: {

@@ -3,17 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
+import store from './state/index'
 
 Vue.config.productionTip = false
-
-var store = new Vuex.Store({
-  state: {
-    num: 66
-  }
-})
 
 /* eslint-disable no-new */
 new Vue({

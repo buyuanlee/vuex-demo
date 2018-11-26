@@ -1,22 +1,25 @@
 <template>
   <div class="hello">
     <parent/>
+    <hr>
+    <outter/>
   </div>
 </template>
 
 <script>
-  import Parent from './parent'
+  import parent from './parent'
+  import outter from './outter'
 
   export default {
     name: 'HelloWorld',
-    components: {Parent},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     },
-    comments: {
-      parent
+    components: {
+      parent,
+      outter
     }
   }
 </script>
