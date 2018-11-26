@@ -1,21 +1,34 @@
-# vuex-demo
+## vuex之store
 
-> A Vue.js project
+### 是什么？
 
-## Build Setup
+用来管理状态，共享数据，在各个组件之间管理外部状态（例如登陆状态）
 
-``` bash
-# install dependencies
-npm install
+### 安装与使用
 
-# serve with hot reload at localhost:8080
-npm run dev
+1. npm安装
 
-# build for production with minification
-npm run build
+    ```shell
+    npm install vuex	
+    ```
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+2. 引入vuex，并通过use方法使用它(./src/router/main.js)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+    ```javascript
+    import Vuex from 'vuex'
+    
+    Vue.use(Vuex)
+    ```
+
+3. 创建状态仓库
+
+   ```javascript
+   var store = new Vuex.Store({
+       state:{
+           XXX:xxx
+       }
+   })
+   ```
+
+4. 通过this.$store.state.xxx直接拿到需要的数据
+

@@ -1,8 +1,11 @@
 <template>
   <div>
     <span>我是父组件</span>---{{fromSonMsg}}
+    <br>
+    我也是来自全局的{{getNum}}
     <hr>
     <son v-bind:msg="toSonMsg" @handle="getMsgFromSon"></son>
+    <br>
   </div>
 </template>
 
@@ -23,6 +26,11 @@
     methods: {
       getMsgFromSon: function (value) {
         this.fromSonMsg = value
+      }
+    },
+    computed: {
+      getNum: function () {
+        return this.$store.state.num
       }
     }
   }

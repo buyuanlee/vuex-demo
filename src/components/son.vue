@@ -2,6 +2,8 @@
   <div>
     <span>我是子组件</span>------{{msg}}
     <button @click="sendMsgToFather">传递数据至父组件</button>
+    <br>
+    我是来自全局的{{getNum}}
   </div>
 </template>
 
@@ -22,6 +24,11 @@
     methods: {
       sendMsgToFather: function () {
         this.$emit('handle', this.toFartherMsg)
+      }
+    },
+    computed: {
+      getNum: function () {
+        return this.$store.state.num
       }
     }
   }
